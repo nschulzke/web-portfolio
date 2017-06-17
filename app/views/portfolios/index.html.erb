@@ -3,8 +3,8 @@
 <div>
   <% @portfolio_items.each do |item| %>
   <div>
-    <div><%= item.title %> | <%= link_to "Edit", edit_portfolio_path(item) %></div>
-    <div><%= item.subtitle %></div>
+    <h2><%= link_to item.title, item %></h2>
+    <div><%= link_to "Edit", edit_portfolio_path(item) %> | <%= item.subtitle %></div>
     <div><%= item.body %></div>
     <%=  image_tag item.thumb_image if item.thumb_image? %>
   </div>
