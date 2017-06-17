@@ -4,7 +4,8 @@
   <% @portfolio_items.each do |item| %>
   <div>
     <h2><%= link_to item.title, item %></h2>
-    <div><%= link_to "Edit", edit_portfolio_path(item) %> | <%= item.subtitle %></div>
+    <div><%= link_to "Edit", edit_portfolio_path(item) %> | <%= link_to "Delete", item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <div><%= item.subtitle %></div>
     <div><%= item.body %></div>
     <%=  image_tag item.thumb_image if item.thumb_image? %>
   </div>
