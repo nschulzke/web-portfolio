@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, except: [:index, :new, :create]
 
   # GET /posts
   # GET /posts.json
@@ -60,11 +60,20 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def toggle_status
+    if @post.draft?
+      @post.published!
+    else
+      @post.draft!
+    end
+    redirect_to posts_url
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
