@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, except: [:index, :new, :create]
 
   # GET /posts
   # GET /posts.json
@@ -59,6 +59,15 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def toggle_status
+    if @post.draft?
+      @post.published!
+    else
+      @post.draft!
+    end
+    redirect_to posts_url
   end
 
   private
