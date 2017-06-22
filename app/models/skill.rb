@@ -6,6 +6,6 @@ class Skill < ApplicationRecord
   after_initialize :set_defaults
   
   def set_defaults
-    self.thumb_image ||= Placeholder.image_generator( height: '50', width: '50' )
+    self.badge ||= Placeholder.image_generator( height: '50', width: '50' )
   end
 end
