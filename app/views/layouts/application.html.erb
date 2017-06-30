@@ -17,10 +17,6 @@
     
     <%= yield %>
     
-    <% if session[:source] && session[:source] != '' %>
-      <div>
-        Thanks for visiting me from <%= session[:source] %>
-      </div>
-    <% end %>
+    <%= source_helper %>
   </body>
 </html>
