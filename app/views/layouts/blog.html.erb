@@ -5,7 +5,7 @@
     <meta name="description" content="<%= @meta_description %>">
 
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,9 +13,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <%= render 'shared/nav' %> 
-    
     <%= yield %>
+    
+    <%= render 'shared/nav' %>
     
     <%= source_helper %>
   </body>

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, except: [:index, :new, :create]
+  layout 'blog'
 
   # GET /posts
   # GET /posts.json
