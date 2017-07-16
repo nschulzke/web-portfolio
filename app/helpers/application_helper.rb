@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag :div, greeting, class: 'source-greeting'
     end
   end
+  
+  def copyright_helper
+    SchulzkeViewTool::Renderer.copyright 'Nathan Schulzke', 'All rights reserved'
+  end
 end

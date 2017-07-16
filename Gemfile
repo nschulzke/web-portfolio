@@ -56,3 +56,5 @@ gem 'devise', '~> 4.3'
 gem 'jquery-rails'
 gem 'popper_js'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+gem 'schulzke_view_tool', git: 'https://github.com/nschulzke/schulzke_view_tool'
