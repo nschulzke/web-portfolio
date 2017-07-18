@@ -19,4 +19,31 @@ module ApplicationHelper
   def copyright_helper
     SchulzkeViewTool::Renderer.copyright 'Nathan Schulzke', 'All rights reserved'
   end
+  
+  def nav_items
+    [
+      { title: 'Home',
+        url: root_path },
+      { title: 'About',
+        url: about_path },
+      { title: 'Contact',
+        url: contact_path },
+      { title: 'Blog',
+        url: posts_path },
+      { title: 'Portfolio',
+        url: portfolios_path }
+    ]
+  end
+  
+  def nav_helper
+    nav_links = ''
+    nav_items.each do |item|
+      nav_links << yield(item[:title], item[:url])
+    end
+    nav_links.html_safe
+  end
+  
+  def active? path
+    "active" if current_page? path
+  end
 end

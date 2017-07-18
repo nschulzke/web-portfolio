@@ -2,11 +2,9 @@
   <div class="inner">
     <h3 class="masthead-brand">Nathan Schulzke</h3>
     <nav class="nav nav-masthead">
-      <%= link_to 'Home', root_path, class: 'nav-link active' %>
-      <%= link_to 'About', about_path, class: 'nav-link' %>
-      <%= link_to 'Contact', contact_path, class: 'nav-link' %>
-      <%= link_to 'Blog', posts_path, class: 'nav-link' %>
-      <%= link_to 'Portfolio', portfolios_path, class: 'nav-link' %>
+      <%= nav_helper do |title, link|
+        link_to title, link, class: "nav-link #{active? link}"
+      end %>
       <%= login_helper 'nav-link' %>
     </nav>
   </div>
