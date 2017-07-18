@@ -1,14 +1,8 @@
 <div class="blog-post">
-  <h2 class="blog-post-title"><%= link_to post.title %></h2>
-  <p class="blog-post-meta">Published <%= distance_of_time_in_words post.created_at, Time.now %> ago</p>
+  <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
+  <%= render 'post_options', post: post %>
+  <p class="blog-post-meta"><%= metadata_helper post %></p>
   <p>
     <%= post.body %>
   </p>
-  <% if logged_in? :site_admin %>
-  <div>
-    <%= link_to post.status, toggle_status_post_path(post) %> |
-    <%= link_to 'Edit', edit_post_path(post) %> |
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-  <% end %>
 </div><!-- /.blog-post -->
