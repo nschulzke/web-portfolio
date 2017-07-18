@@ -1,0 +1,3 @@
+<%= link_to_unless current_page.first?, raw('&laquo; Newer'), url, :remote => remote, class: 'prev btn btn-outline-primary' do |name| -%>
+  <a class="prev disabled btn btn-outline-secondary"><%= name %></span>
+<% end -%>

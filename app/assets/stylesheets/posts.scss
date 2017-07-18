@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /*
  * Globals
@@ -127,9 +128,6 @@ h6, .h6 {
 
 
 /* Pagination */
-.blog-pagination {
-  margin-bottom: 4rem;
-}
 .blog-pagination > .btn {
   border-radius: 2rem;
 }
@@ -174,4 +172,21 @@ h6, .h6 {
 
 .post-options {
   float: right;
+}
+
+.social-links li {
+  font-size: 1.7em;
+  display: inline-block;
+}
+
+.blog-pagination {
+  width: 50%;
+  margin: 1rem auto;
+  height: 1rem;
+  .next {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
 }
