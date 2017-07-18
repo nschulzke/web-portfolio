@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def login_helper css_class
+  def login_helper css_class = ''
     if current_user.has_roles?(:guest)
       (link_to "Register", new_user_registration_path, class: css_class) +
       " " +
