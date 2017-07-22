@@ -15,17 +15,17 @@
   </head>
 
   <body>
-    
+
     <%= render 'shared/alerts' %>
-    
+
     <%= render 'shared/portfolio_nav' %>
-    
+
     <%= render 'shared/portfolio_header' unless logged_in?(:site_admin) %>
-    
+
     <%= yield %>
-    
+
     <%= render 'shared/portfolio_footer' %>
-    
+
     <%= source_helper %>
   </body>
 </html>
