@@ -29,7 +29,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 body {
   color: #fff;
@@ -164,7 +163,7 @@ body {
 /*
  * Custom styles
  */
- 
+
  .card-block {
    color: black;
    text-align: left;
@@ -182,14 +181,22 @@ body {
      margin-bottom: 0.5rem;
    }
  }
- 
+
  .register-links {
    text-align: right;
    float: right;
    width: 10rem;
  }
- 
+
  .card.login {
    width: 22rem;
    margin: 0 auto;
  }
+
+body {
+  background: image-url('background.png');
+}
+
+.mastfoot {
+  color: white;
+}
