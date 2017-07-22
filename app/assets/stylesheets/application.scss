@@ -164,37 +164,46 @@ body {
  * Custom styles
  */
 
- .card-block {
-   color: black;
-   text-align: left;
-   font-size: 0.8rem;
-   a {
-     color: black;
-   }
-   h3 {
-     font-size: 1.2rem;
-   }
-   label {
-     margin-bottom: 0.2rem;
-   }
-   .form-group {
-     margin-bottom: 0.5rem;
-   }
- }
+.card-block {
+  color: black;
+  text-align: left;
+  font-size: 0.8rem;
+  a {
+    color: black;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  label {
+    margin-bottom: 0.2rem;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+}
 
- .register-links {
-   text-align: right;
-   float: right;
-   width: 10rem;
- }
+.register-links {
+  text-align: right;
+  float: right;
+  width: 10rem;
+}
 
- .card.login {
-   width: 22rem;
-   margin: 0 auto;
- }
+.card.login {
+  width: 22rem;
+  margin: 0 auto;
+}
 
-body {
-  background: image-url('background.png');
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .mastfoot {
