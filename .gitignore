@@ -20,3 +20,6 @@
 
 # No secrets!
 /config/secrets.yml
+
+/public/uploads/*
+!/public/uploads/.keep
