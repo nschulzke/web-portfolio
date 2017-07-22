@@ -1,4 +1,5 @@
 set_positions = undefined
+change_file = undefined
 ready = undefined
 
 set_positions = ->
@@ -6,6 +7,11 @@ set_positions = ->
     $(this).attr 'data-pos', i + 1
     return
   return
+
+change_file = ->
+  input = $(this)
+  label = input.val().replace(/\\/g, '/').replace(/.*\//, '')
+  input.trigger 'fileselect', [label]
 
 ready = ->
   set_positions()
@@ -25,6 +31,10 @@ ready = ->
         order: updated_order
         authenticity_token: window._token
     return
+  $(':file').on 'fileselect', (event, label) ->
+    $(this).parent().siblings('.file-name').html(label)
+    return
   return
 
+$(document).on 'change', ':file', change_file
 $(document).ready ready
