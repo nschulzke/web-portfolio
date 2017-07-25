@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
+//= require gritter 
 //= require_tree .

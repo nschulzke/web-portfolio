@@ -8,18 +8,18 @@ module ApplicationHelper
       (link_to "Logout", destroy_user_session_path, method: :delete, class: css_class)
     end
   end
-  
+
   def source_helper
     if session[:source] && session[:source] != ''
       greeting = "Thanks for visiting me from #{session[:source]}"
       content_tag :div, greeting, class: 'source-greeting'
     end
   end
-  
+
   def copyright_helper
     SchulzkeViewTool::Renderer.copyright 'Nathan Schulzke', 'All rights reserved'
   end
-  
+
   def nav_items
     [
       { title: 'Home',
@@ -34,7 +34,7 @@ module ApplicationHelper
         url: portfolios_path }
     ]
   end
-  
+
   def nav_helper
     nav_links = ''
     nav_items.each do |item|
@@ -42,8 +42,16 @@ module ApplicationHelper
     end
     nav_links.html_safe
   end
-  
+
   def active? path
     "active" if current_page? path
+  end
+
+  def array_to_ul array
+    content_tag :ul do
+      array.map do |item|
+        concat(content_tag :li, item)
+      end
+    end
   end
 end
