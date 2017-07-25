@@ -54,4 +54,16 @@ module ApplicationHelper
       end
     end
   end
+
+  def gritter text, title: nil
+    js add_gritter text, title: title, sticky: false
+  end
+
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      gritter alert
+    end
+  end
 end

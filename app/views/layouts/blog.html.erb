@@ -13,21 +13,21 @@
 
   <body>
     <%= render 'shared/blog_nav' %>
-    
+
     <%= render 'shared/blog_header' %>
-          
+
     <div class="container">
-      
+
       <div class="row">
-        <%= render 'shared/alerts' %>
-        
+        <%= alerts %>
+
         <div class="col-sm-8 blog-main">
           <%= yield %>
         </div>
-        
+
         <%= render 'shared/blog_sidebar' %>
       </div>
-      
+
       <%= render 'shared/blog_footer' %>
     </div>
     <%= source_helper %>

@@ -1,6 +1,6 @@
 <%= form_for(portfolio_item) do |form| %>
   <% if portfolio_item.errors.any? %>
-    <%= js add_gritter(array_to_ul(portfolio_item.errors.full_messages), title: pluralize(portfolio_item.errors.count, "error"), sticky: false ) %>
+      <%= gritter array_to_ul(post.errors.full_messages).full_messages, title: pluralize(portfolio_item.errors.count, "error") %>
   <% end %>
 
   <div class="row">

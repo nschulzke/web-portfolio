@@ -1,6 +1,6 @@
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
-    <%= js add_gritter(array_to_ul(post.errors.full_messages), title: pluralize(post.errors.count, "error"), sticky: false ) %>
+    <%= gritter array_to_ul(post.errors.full_messages), title: pluralize(post.errors.count, "error") %>
   <% end %>
 
   <div class="form-group">
