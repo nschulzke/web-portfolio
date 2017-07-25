@@ -1,0 +1,6 @@
+<% if logged_in? :site_admin %>
+<div class="portfolio-options">
+  <%= link_to 'Edit', edit_portfolio_path(portfolio_item) %> |
+  <%= link_to 'Destroy', portfolio_item, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
