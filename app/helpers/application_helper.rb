@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include BootstrapFlashAlerts
+
   def login_helper css_class = ''
     if current_user.has_roles?(:guest)
       (link_to "Register", new_user_registration_path, class: css_class) +
@@ -45,25 +47,5 @@ module ApplicationHelper
 
   def active? path
     "active" if current_page? path
-  end
-
-  def array_to_ul array
-    content_tag :ul do
-      array.map do |item|
-        concat(content_tag :li, item)
-      end
-    end
-  end
-
-  def gritter text, title: nil
-    js add_gritter text, title: title, sticky: false
-  end
-
-  def alerts
-    alert = (flash[:alert] || flash[:error] || flash[:notice])
-
-    if alert
-      gritter alert
-    end
   end
 end
