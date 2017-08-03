@@ -1,16 +1,3 @@
-# README
+This is basically a clone of Jordan Hudgens's portfolio app located here: https://github.com/jordanhudgens/devcamp-portfolio
 
-This is my README. Here is what it said by default:
-
->This README would normally document whatever steps are necessary to get the
-application up and running.
->Things you may want to cover:
->* Ruby version
->* System dependencies
->* Configuration
->* Database creation
->* Database initialization
->* How to run the test suite
->* Services (job queues, cache servers, search engines, etc.)
->* Deployment instructions
->* ...
+I was participating as a mentor in a version of the DevCamp.com bootcamp that was being offered to High School students throughout Utah, and completed this along with the students so that I could help them out. I made a few changes here and there where I thought my way was better, but almost all of the code was Jordan's.
