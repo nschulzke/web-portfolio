@@ -3,7 +3,7 @@
   <div class="row">
     <% @tweets.each do |tweet| %>
       <div class="col-md-6 card tech-news">
-        <%= tweet %>
+        <%= twitter_parser tweet %>
       </div>
     <% end %>
   </div>
