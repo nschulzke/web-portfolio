@@ -55,3 +55,5 @@ gem 'cocoon', '~> 1.2', '>= 1.2.10'
 gem 'bootstrap_flash_alerts', github: 'nschulzke/bootstrap_flash_alerts'
 
 gem 'twitter', '~> 6.1'
+
+gem 'redis', '~> 3.3', '>= 3.3.3'

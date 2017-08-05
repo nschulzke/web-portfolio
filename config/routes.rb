@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   resources :portfolios, except: [:show] do
     put :sort, on: :collection
   end
-
-
-  get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'show_portfolio'
+
+  mount ActionCable.server => '/cable'
 end

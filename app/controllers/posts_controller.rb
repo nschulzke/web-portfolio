@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, except: [:index, :new, :create]
+  before_action :set_post, except: [:index, :new, :create, :show]
   layout 'blog'
   access all: [:show, :index], site_admin: :all
 
@@ -12,6 +12,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
+    @page_title = @post.title
   end
 
   # GET /posts/new
@@ -62,7 +66,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def toggle_status
     if @post.draft?
       @post.published!
