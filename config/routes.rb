@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   root to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
@@ -14,8 +13,7 @@ Rails.application.routes.draw do
   resources :portfolios, except: [:show] do
     put :sort, on: :collection
   end
-
-
-  get 'angular-items', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'show_portfolio'
+
+  mount ActionCable.server => '/cable'
 end
