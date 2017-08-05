@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @page_title = @post.title
   end
 
   # GET /posts/new
@@ -62,7 +63,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def toggle_status
     if @post.draft?
       @post.published!
