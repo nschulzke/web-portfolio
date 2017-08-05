@@ -3,11 +3,13 @@ module ApplicationCable
     identified_by :current_user
 
     def guest_user
-      User.new(
+      guest = User.new(
         name: "Guest User",
         email: "guest@example.com",
-        roles: "guest"
+        roles: "guest",
       )
+      guest.id = guest.object_id
+      guest
     end
 
     def connect
