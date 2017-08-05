@@ -191,3 +191,15 @@ h6, .h6 {
     float: left;
   }
 }
+
+.comment.card {
+  margin-top: 15px;
+  .user-info {
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    .user-name {
+      font-weight: bold;
+    }
+  }
+}
