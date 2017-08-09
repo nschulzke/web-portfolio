@@ -1,10 +1,16 @@
-<div class="blog-masthead">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded blog-nav" id="blog-masthead">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="container">
-    <nav class="nav blog-nav">
-      <%= nav_helper do |title, link|
-        link_to title, link, class: "nav-link #{active? link}"
-      end %>
-      <%= login_helper 'nav-link' %>
-    </nav>
+    <%= link_to "Nathan Schulzke", root_path, class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper do |title, link|
+          content_tag :li, link_to(title, link, class: "nav-link #{active? link}")
+        end %>
+        <%= content_tag :li, login_helper('nav-link') %>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
