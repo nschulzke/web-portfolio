@@ -17,9 +17,13 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in? :site_admin || @blog.published?
+      @comment = Comment.new
 
-    @page_title = @post.title
+      @page_title = @post.title
+    else
+      redirect_to posts_path, warning: 'You are not authorized to access this page.'
+    end
   end
 
   # GET /posts/new
@@ -88,6 +92,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :topic_id)
     end
 end
