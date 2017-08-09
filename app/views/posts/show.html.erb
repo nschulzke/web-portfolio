@@ -3,7 +3,7 @@
 <p class="blog-post-meta"><%= metadata_helper @post %></p>
 <p class="blog-post-meta"><%= @post.topic.title %></p>
 <p>
-  <%= @post.body %>
+  <%= markdown @post.body %>
 
   <%= render 'comments/comment_form' %>
   <div id="comments" data-post-id="<%= @post.id %>">
