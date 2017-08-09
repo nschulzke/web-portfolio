@@ -3,6 +3,6 @@
   <%= render 'shared/post_options', post: post %>
   <p class="blog-post-meta"><%= metadata_helper post %></p>
   <p>
-    <%= post.body %>
+    <%= markdown post.body %>
   </p>
 </div><!-- /.blog-post -->
