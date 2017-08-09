@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, except: [:index, :new, :create, :show]
+  before_action :set_sidebar_topics, except: [:create, :update, :destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], site_admin: :all
 
@@ -93,5 +94,9 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :topic_id)
+    end
+
+    def set_sidebar_topics
+      @sidebar_topics = Topic.with_posts
     end
 end
