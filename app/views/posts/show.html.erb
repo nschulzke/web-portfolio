@@ -1,5 +1,5 @@
 <h2 class="blog-post-title"><%= @post.title %></h2>
-<%= render 'post_options', post: @post %>
+<%= render 'shared/post_options', post: @post %>
 <p class="blog-post-meta"><%= metadata_helper @post %></p>
 <p class="blog-post-meta"><%= @post.topic.title %></p>
 <p>

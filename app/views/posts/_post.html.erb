@@ -1,6 +1,6 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
-  <%= render 'post_options', post: post %>
+  <%= render 'shared/post_options', post: post %>
   <p class="blog-post-meta"><%= metadata_helper post %></p>
   <p>
     <%= post.body %>
