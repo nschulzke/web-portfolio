@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.page(params[:page]).per(5)
+    if logged_in? :site_admin
+      @posts = Post.recent.page(params[:page]).per(5)
+    else
+      @posts = Post.recent.published.page(params[:page]).per(5)
+    end
   end
 
   # GET /posts/1
