@@ -26,4 +26,8 @@ module PostsHelper
     markdown_to_html = Redcarpet::Markdown.new coderayified, options
     markdown_to_html.render(text).html_safe
   end
+
+  def post_status_style post
+    "color: red" if post.draft?
+  end
 end

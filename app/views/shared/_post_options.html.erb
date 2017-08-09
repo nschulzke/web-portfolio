@@ -1,6 +1,6 @@
 <% if logged_in? :site_admin %>
 <div class="post-options">
-  <%= link_to post.status, toggle_status_post_path(post) %> |
+  <%= link_to fa_icon('file-text'), toggle_status_post_path(post), style: post_status_style(post) %> |
   <%= link_to fa_icon('pencil-square-o'), edit_post_path(post) %> |
   <%= link_to fa_icon('trash-o'), post, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
